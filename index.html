@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Tracker: Numerical Quadrature Methods Assignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    /* Sidebar styling for progress tracking */
+    .sidebar {
+      width: 250px;
+      background: #f7f7f7;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+    }
+    /* Main content area styling */
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    /* Task groups and items */
+    .task-group {
+      margin-bottom: 20px;
+    }
+    .task-item {
+      margin: 5px 0;
+    }
+    .sub-task {
+      margin-left: 20px;
+    }
+    /* Progress bar styling */
+    .progress-container {
+      width: 100%;
+      background-color: #ddd;
+      height: 20px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress {
+      height: 100%;
+      width: 0%;
+      background-color: #4CAF50;
+      transition: width 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar for task progress -->
+  <div class="sidebar">
+    <h2>Task Progress</h2>
+    <div class="progress-container">
+      <div id="progressBar" class="progress"></div>
+    </div>
+    <p id="progressText">0% Completed</p>
+  </div>
+
+  <!-- Main content with tasks -->
+  <div class="content">
+    <h1>Numerical Quadrature Methods Assignment Workflow</h1>
+
+    <!-- Implementation Phase -->
+    <div class="task-group">
+      <h2>1. Implementation Phase</h2>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task1">
+        <label for="task1">Implement composite quadrature methods (6 total):</label>
+      </div>
+      <div class="sub-task">
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task1_1">
+          <label for="task1_1">Composite Left Rectangle Rule</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task1_2">
+          <label for="task1_2">Composite Trapezoidal Rule</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task1_3">
+          <label for="task1_3">Composite Simpson's Rule</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task1_4">
+          <label for="task1_4">Composite Midpoint Rule</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task1_5">
+          <label for="task1_5">Composite Open Newton-Cotes two-point method</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task1_6">
+          <label for="task1_6">Composite Gauss-Legendre two-point method</label>
+        </div>
+      </div>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task2">
+        <label for="task2">Implement adaptive step refinement versions:</label>
+      </div>
+      <div class="sub-task">
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task2_1">
+          <label for="task2_1">Composite Midpoint Rule with α = 1/3</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task2_2">
+          <label for="task2_2">Composite Trapezoidal Rule with α = 1/2</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task2_3">
+          <label for="task2_3">Ensure maximum reuse of function evaluations</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mathematical Analysis -->
+    <div class="task-group">
+      <h2>2. Mathematical Analysis</h2>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task3">
+        <label for="task3">Derive error expressions for:</label>
+      </div>
+      <div class="sub-task">
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task3_1">
+          <label for="task3_1">Composite Left Rectangle Rule</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task3_2">
+          <label for="task3_2">Composite Open Newton-Cotes two-point method</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task3_3">
+          <label for="task3_3">Composite Gauss-Legendre two-point method</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testing & Validation -->
+    <div class="task-group">
+      <h2>3. Testing & Validation</h2>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task4">
+        <label for="task4">Test with given 5 standard integrals:</label>
+      </div>
+      <div class="sub-task">
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task4_1">
+          <label for="task4_1">Integral 1: ∫(0 to 3) e^x dx</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task4_2">
+          <label for="task4_2">Integral 2: ∫(0 to π/3) e^(sin(2x))cos(2x) dx</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task4_3">
+          <label for="task4_3">Integral 3: ∫(-2 to 1) tanh(x) dx</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task4_4">
+          <label for="task4_4">Integral 4: ∫(0 to 3.5) x cos(2πx) dx</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task4_5">
+          <label for="task4_5">Integral 5: ∫(0.1 to 2.5) (x + 1/x) dx</label>
+        </div>
+      </div>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task5">
+        <label for="task5">Create additional test problems for validation</label>
+      </div>
+    </div>
+
+    <!-- Analysis & Documentation -->
+    <div class="task-group">
+      <h2>4. Analysis & Documentation</h2>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task6">
+        <label for="task6">Perform error analysis:</label>
+      </div>
+      <div class="sub-task">
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task6_1">
+          <label for="task6_1">Estimate required subinterval sizes for different error demands</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task6_2">
+          <label for="task6_2">Compare predicted vs. actual errors</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task6_3">
+          <label for="task6_3">Compare computational complexity (function evaluations)</label>
+        </div>
+      </div>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task7">
+        <label for="task7">Compare non-adaptive methods:</label>
+      </div>
+      <div class="sub-task">
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task7_1">
+          <label for="task7_1">Analyze accuracy vs. function evaluations</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task7_2">
+          <label for="task7_2">Identify performance trends</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task7_3">
+          <label for="task7_3">Evaluate conservativeness of a priori error estimates</label>
+        </div>
+      </div>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task8">
+        <label for="task8">Compare adaptive methods:</label>
+      </div>
+      <div class="sub-task">
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task8_1">
+          <label for="task8_1">Compare with non-adaptive methods</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" class="task" id="task8_2">
+          <label for="task8_2">Evaluate accuracy per function evaluation ratio</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Implementation Documentation -->
+    <div class="task-group">
+      <h2>5. Implementation Documentation</h2>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task9">
+        <label for="task9">Document implementation strategies</label>
+      </div>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task10">
+        <label for="task10">Explain function evaluation reuse in adaptive methods</label>
+      </div>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task11">
+        <label for="task11">Describe data structures and computational organization</label>
+      </div>
+    </div>
+
+    <!-- Final Submission & Review -->
+    <div class="task-group">
+      <h2>6. Final Submission & Review</h2>
+      <div class="task-item">
+        <input type="checkbox" class="task" id="task12">
+        <label for="task12">Prepare final report with all analyses</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for progress tracking -->
+  <script>
+    // In our forward-thinking, no-nonsense approach,
+    // each checkbox change triggers progress recalculation.
+    function updateProgress() {
+      const tasks = document.querySelectorAll('.task');
+      let completed = 0;
+      tasks.forEach(task => {
+        if (task.checked) { completed++; }
+      });
+      const total = tasks.length;
+      const percentage = Math.round((completed / total) * 100);
+      document.getElementById('progressBar').style.width = percentage + '%';
+      document.getElementById('progressText').textContent =
+        percentage + '% Completed (' + completed + ' of ' + total + ' tasks)';
+    }
+
+    // Bulletproof event handling for all task checkboxes
+    document.querySelectorAll('.task').forEach(task => {
+      task.addEventListener('change', updateProgress);
+    });
+
+    // Initialize progress on page load
+    updateProgress();
+  </script>
+
+</body>
+</html>
